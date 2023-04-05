@@ -5,7 +5,7 @@ import 'package:sample/error%20handling/handle_error.dart';
 import 'package:sample/model/login/login_dm.dart';
 import 'package:sample/model/login/login_response_dm.dart';
 import 'package:sample/screen/otp/otp_screen.dart';
-import 'package:sample/service/login_service.dart';
+import 'package:sample/service/login/login_service.dart';
 
 class LoginController extends GetxController with HandleError {
   bool passValidated = false;

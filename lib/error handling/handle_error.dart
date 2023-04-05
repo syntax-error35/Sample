@@ -12,11 +12,11 @@ class HandleError implements Exception{
    if(errorType == DioErrorType.cancel){
      msg = "Request to API server was cancelled";
    }
-   else if(errorType == DioErrorType.connectionTimeout){
+   else if(errorType == DioErrorType.connectTimeout){
      msg = "Connection timeout with API server";
    }
-   if(errorType == DioErrorType.connectionError){
-     msg = "Connection to API server failed due to internet connection";
+   if(errorType == DioErrorType.other){
+     msg = "NoInternet";
    }
    if(errorType == DioErrorType.receiveTimeout){
      msg = "Receive timeout in connection with API server";
@@ -24,7 +24,7 @@ class HandleError implements Exception{
    if(errorType == DioErrorType.sendTimeout){
      msg = "Send timeout in connection with API server";
    }
-   if(errorType == DioErrorType.badResponse){
+   if(errorType == DioErrorType.response){
      msg = dioErrorResponse(error);
    }
    else{
@@ -38,7 +38,7 @@ class HandleError implements Exception{
        var error = errorDio.response;
        print(error.toString());
        var errorData = ErrorDm.fromJson(jsonDecode(error.toString()));
-       return errorData.app_message ?? 'nullll';
+       return errorData.app_message ?? 'ERROR';
      }
      return "Something went wrong";
   }

@@ -1,6 +1,6 @@
 import 'package:sample/model/otp/otpDm.dart';
 
-import '../network/dio_Client.dart';
+import '../../network/dio_Client.dart';
 
 class VerifyOtpService{
   verifyOtpRequest(OtpDm otpData, Map<String, dynamic> header) async {
